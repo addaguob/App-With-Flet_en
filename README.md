@@ -13,64 +13,64 @@ The project was developed to study and practice programming in Python, MySQL dat
 - Sales Registration: Allows registering sales, associating the customers and products involved.
 - Stock Control: Keeps the product stock updated based on the sales made.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 - Python
 - MySQL
-- Flet (interface gráfica)
+- Flet (graphical interface)
 
-## Telas:
+## Screens:
 
 Login:
 
 ![Login](Screens/Login.PNG)
 
-Tela Inicial:
+Home Screen:
 
-![Tela Inicial](Screens/Home.PNG)
+![Home Screen](Screens/Home.PNG)
 
-Vendas:
+Sales:
 
-![Vendas](Screens/Sales.PNG)
+![Sales](Screens/Sales.PNG)
 
-Produtos:
+Products:
 
-![Produtos](Screens/Products.PNG)
+![Products](Screens/Products.PNG)
 
-Clientes:
+Clients:
 
-![Clientes](Screens/Customers.PNG)
+![Clients](Screens/Customers.PNG)
 
-Cadastro de Usuários:
+User Registration:
 
-![Cadastro de Usuários](Screens/Users.PNG)
+![User Registration](Screens/Users.PNG)
 
-## Para testar:
+## To test:
 
 To run the application, make sure you have Python and MySQL installed on your system. In addition, it is recommended to create a virtual environment to isolate the project's dependencies.
 
-1. Clone o repositório em sua máquina local:
+1. Clone the repository to your local machine:
 
    - git clone https://github.com/HelioCard/App-With-Flet.git
    - cd App-With-Flet
 
-2. Instale as dependências do projeto:
+2. Install the project dependencies:
 
    - pip install -r requirements.txt
 
-3. Acesse o MySQL. Crie seu banco de dados (schema) e execute o script da pasta "database_scripts" para criação das tabelas. Há duas opções:
+3. Access the MySQL. Create your database (schema) and execute the script from the "database_scripts" folder to create the tables. There are two options:
 
-   - create_tables - structure_only.sql (somente criação das tabelas);
-   - create_tables - structure_and_some_data.sql (criação das tabelas e inserção de alguns dados para teste)
+   - create_tables - structure_only.sql (only table creation);
+   - create_tables - structure_and_some_data.sql (table creation and insertion of some test data)
 
-4. Execute o arquivo main.py. Digite qualquer texto nos campos "Usuário" e "Senha" e clique em "Login" para abrir a tela de configuração inicial do banco de dados. Insira seus dados de conexão e clique em "Salvar". As seguintes telas só abrem na primeira execução, quando ainda não houve configuração:
+4. Run the main.py file. Enter any text in the "User" and "Password" fields and click "Login" to open the initial database configuration screen. Enter your connection details and click "Save". The following screens only open on the first run, when there has been no configuration yet:
 
-![Configuração do Banco de Dados](Screens/Config_DB.PNG)
+![Database Configuration](Screens/Config_DB.PNG)
 
-5. Mais uma vez, digite qualquer texto nos campos "Usuário" e "Senha" e clique em "Login" para abrir a tela do cadastro de administrador. Preencha e clique em "Cadastrar":
+5. Once again, enter any text in the "User" and "Password" fields and click "Login" to open the administrator registration screen. Fill in and click "Register":
 
-![Criação do Primeiro Administrador](Screens/Config_Admin.PNG)
+![First Administrator Creation](Screens/Config_Admin.PNG)
 
-6. Faça o Login.
+6. Log in.
 
 The project was developed for educational purposes and to develop skills in Python, MySQL, and Flet. Feel free to explore the code and adapt it to your needs. If you have any questions or suggestions, please contact me: helio.card@yahoo.com.br
