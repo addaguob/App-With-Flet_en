@@ -29,14 +29,14 @@ class Login(UserControl):
 
     def build(self):
         self.text_user = TextField(
-            label="Usuário",
+            label="User",
             prefix_icon=icons.PERSON_2_OUTLINED,
             expand=True,
             autofocus=True,
             on_change=self.analyze_to_enable_button,
         )
         self.text_password = TextField(
-            label="Senha",
+            label="Password",
             prefix_icon=icons.LOCK_OUTLINE_ROUNDED,
             expand=True,
             password=True,
