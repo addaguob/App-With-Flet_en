@@ -16,10 +16,10 @@ class Config:
         self.user_name = None
         self.permission = None
 
-        self.company_name = "NOME DA SUA EMPRESA"
-        self.company_adress = "Endereço completo da sua Empresa aqui"
-        self.company_tel = "Telefone da sua Empresa aqui"
-        self.company_email = "E-mail da sua Empresa aqui"
+        self.company_name = "Company Name"
+        self.company_adress = "Company Address"
+        self.company_tel = "Company Phone"
+        self.company_email = "Company Email"
 
     def read_file(self):
         with open("data.bin", "rb") as file:
