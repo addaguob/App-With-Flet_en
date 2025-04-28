@@ -13,15 +13,15 @@ class CreateConfig(AlertDialog):
         super().__init__()
         self.route = route
         self.modal = True
-        self.title=Row(expand=True, controls=[Text("Configurar conexão ao banco de dados:", width=500)])
+        self.title=Row(expand=True, controls=[Text("Configure database connection:", width=500)])
 
         self.tf_host = TextField(label = "Host", value="localhost")
         self.tf_user = TextField(label = "User", value="root")
         self.tf_passwd = TextField(label = "Password", value="")
         self.tf_database = TextField(label = "Database", value="")
         self.tf_port = TextField(label = "Port", value="3306")
-        self.btn_back = TextButton(text="Voltar", on_click=self.back_clicked)
-        self.btn_save = TextButton(text="Salvar", on_click=self.save_bd_config)
+        self.btn_back = TextButton(text="Back", on_click=self.back_clicked)
+        self.btn_save = TextButton(text="Save", on_click=self.save_bd_config)
 
         self.actions=[
             Column(
@@ -64,9 +64,9 @@ class CreateConfig(AlertDialog):
                 file.write(key)
                 file.write(b"\n")
                 file.write(encrypted_data)
-            Notification(self.route.page, "Configuração realizada com sucesso!", "green").show_message()
+            Notification(self.route.page, "Configuration completed successfully!", "green").show_message()
         except Exception as e:
-            Notification(self.route.page, f"Erro ao salvar a conexão. Tente reiniciar o sistema! {e}", "red").show_message()
+            Notification(self.route.page, f"Error saving connection. Try restarting the system! {e}", "red").show_message()
 
     def test_connection(self, config_dict):
         config = json.loads(config_dict)
@@ -81,7 +81,7 @@ class CreateConfig(AlertDialog):
             connection.close()
             return True
         except Exception as e:
-            Notification(self.route.page, f"Erro ao criar a conexão. Verifique os dados inseridos! {e}", "red").show_message()
+            Notification(self.route.page, f"Error creating connection. Verify the inserted data! {e}", "red").show_message()
             return False
         
     def save_bd_config(self, e):
