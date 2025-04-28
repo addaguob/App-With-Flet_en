@@ -10,17 +10,17 @@ class Category(AlertDialog):
         super().__init__()
         self.products = products
         self.modal = True
-        self.title=Row(expand=True, controls=[Text("Gerenciar Categorias:", width=400)])
+        self.title=Row(expand=True, controls=[Text("Manage Categories:", width=400)])
 
-        self.tf_new_category = TextField(label="Insira a nova categoria", dense=True, expand=True)
+        self.tf_new_category = TextField(label="Enter the new category", dense=True, expand=True)
         self.btn_save = IconButton(icon=icons.SAVE_OUTLINED, icon_color=colors.PRIMARY, icon_size=32, on_click=self.register_category)
-        self.btn_back = TextButton(text="Voltar", on_click=self.back_clicked)
+        self.btn_back = TextButton(text="Back", on_click=self.back_clicked)
         self.dt_category = DataTable(
             expand=True,
             columns=[
                 DataColumn(Text('ID')), 
-                DataColumn(Text('CATEGORIAS')), 
-                DataColumn(Text('EXCLUIR')), 
+                DataColumn(Text('CATEGORIES')), 
+                DataColumn(Text('DELETE')), 
             ],
         )
 
@@ -87,9 +87,9 @@ class Category(AlertDialog):
         mydb.close()
 
         if result == 'success':
-            self.page.snack_bar = SnackBar(content=Text("Categoria registrada com sucesso!", color='green'))
+            self.page.snack_bar = SnackBar(content=Text("Category registered successfully!", color='green'))
         else:
-            self.page.snack_bar = SnackBar(content=Text(f"Erro ao registrar a categoria: {result}", color='red'))
+            self.page.snack_bar = SnackBar(content=Text(f"Error registering category: {result}", color='red'))
         self.page.snack_bar.open = True
         
         self.load_category()
@@ -104,9 +104,9 @@ class Category(AlertDialog):
         mydb.close()
 
         if result == 'success':
-            self.page.snack_bar = SnackBar(content=Text("Categoria deletada com sucesso!", color='green'))
+            self.page.snack_bar = SnackBar(content=Text("Category deleted successfully!", color='green'))
         else:
-            self.page.snack_bar = SnackBar(content=Text(f"Erro ao deletar a categoria: {result}", color='red'))
+            self.page.snack_bar = SnackBar(content=Text(f"Error deleting category: {result}", color='red'))
         self.page.snack_bar.open = True
         
         self.load_category()
