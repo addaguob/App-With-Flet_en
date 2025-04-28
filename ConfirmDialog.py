@@ -16,8 +16,8 @@ class ConfirmDialog(AlertDialog):
         self.title=Text(title)
         self.content=Text(content)
         self.actions=[
-            TextButton("Não", on_click=self.canceled),
-            TextButton(content=Text("Sim", color="red"), on_click=self.confirmed),
+            TextButton("No", on_click=self.canceled),
+            TextButton(content=Text("Yes", color="red"), on_click=self.confirmed),
         ]
         self.actions_alignment=MainAxisAlignment.END
         self.shape=RoundedRectangleBorder(radius=10)
