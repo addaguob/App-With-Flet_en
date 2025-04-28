@@ -35,29 +35,29 @@ class CreateFirstAdmin(AlertDialog):
 
         self.tf_name = TextField(
             autofocus=True,
-            label="Nome",
+            label="Name",
             prefix_icon=icons.PERSON_2_ROUNDED,
             on_change=self.validate_fields,
         )
         self.tf_user = TextField(
-            label="Usuário",
+            label="User",
             prefix_icon=icons.ASSIGNMENT_IND_ROUNDED,
             on_change=self.validate_fields,
         )
         self.tf_pass1 = TextField(
-            label="Insira a senha",
+            label="Insert password",
             password=True,
             prefix_icon=icons.PASSWORD,
             on_change=self.validate_fields,
         )
         self.tf_pass2 = TextField(
-            label="Repita a senha",
+            label="Repeat password",
             password=True,
             prefix_icon=icons.PASSWORD,
             on_change=self.validate_fields,
         )
         self.btn_register_user = OutlinedButton(
-            text="Cadastrar",
+            text="Register",
             disabled=True,
             icon=icons.ADD_OUTLINED,
             width=140,
