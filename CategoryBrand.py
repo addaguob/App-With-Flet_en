@@ -117,17 +117,17 @@ class Brand(AlertDialog):
         super().__init__()
         self.products = products
         self.modal = True
-        self.title=Row(expand=True, controls=[Text("Gerenciar Marcas:", width=400)])
+        self.title=Row(expand=True, controls=[Text("Manage Brands:", width=400)])
 
-        self.tf_new_brand = TextField(label="Insira a nova marca", dense=True, expand=True)
+        self.tf_new_brand = TextField(label="Enter the new brand", dense=True, expand=True)
         self.btn_save = IconButton(icon=icons.SAVE_OUTLINED, icon_color=colors.PRIMARY, icon_size=32, on_click=self.register_brand)
-        self.btn_back = TextButton(text="Voltar", on_click=self.back_clicked)
+        self.btn_back = TextButton(text="Back", on_click=self.back_clicked)
         self.dt_brand = DataTable(
             expand=True,
             columns=[
                 DataColumn(Text('ID')), 
-                DataColumn(Text('MARCAS')), 
-                DataColumn(Text('EXCLUIR')), 
+                DataColumn(Text('BRANDS')), 
+                DataColumn(Text('DELETE')), 
             ],
         )
 
@@ -194,9 +194,9 @@ class Brand(AlertDialog):
         mydb.close()
 
         if result == 'success':
-            self.page.snack_bar = SnackBar(content=Text("Marca registrada com sucesso!", color='green'))
+            self.page.snack_bar = SnackBar(content=Text("Brand registered successfully!", color='green'))
         else:
-            self.page.snack_bar = SnackBar(content=Text(f"Erro ao registrar a marca: {result}", color='red'))
+            self.page.snack_bar = SnackBar(content=Text(f"Error registering brand: {result}", color='red'))
         self.page.snack_bar.open = True
         
         self.load_brand()
@@ -211,9 +211,9 @@ class Brand(AlertDialog):
         mydb.close()
 
         if result == 'success':
-            self.page.snack_bar = SnackBar(content=Text("Marca deletada com sucesso!", color='green'))
+            self.page.snack_bar = SnackBar(content=Text("Brand deleted successfully!", color='green'))
         else:
-            self.page.snack_bar = SnackBar(content=Text(f"Erro ao deletar a marca: {result}", color='red'))
+            self.page.snack_bar = SnackBar(content=Text(f"Error deleting brand: {result}", color='red'))
         self.page.snack_bar.open = True
         
         self.load_brand()
