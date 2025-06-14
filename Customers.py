@@ -316,21 +316,21 @@ class Customers(UserControl):
 
         if result == "success":
             Notification(
-                self.page, "Cliente excluído com sucesso!", "green"
+                self.page, "Customer deleted successfully!", "green"
             ).show_message()
         else:
             Notification(
-                self.page, f"Erro ao excluir o cliente: {result}", "red"
+                self.page, f"Error deleting customer: {result}", "red"
             ).show_message()
         self.load_customers()
         self.route.page.update()
 
     def edit_clicked(self, e):
         self.route.page.go("/register_customer")
-        self.route.bar.set_title("Editar Cliente")
+        self.route.bar.set_title("Edit Customer")
         self.route.page.update()
 
-        self.route.register_customer.text_new_customer.value = "Editar Cliente:"
+        self.route.register_customer.text_new_customer.value = "Edit Customer:"
         self.route.register_customer.load_customer(e.control.data)
 
         self.route.register_customer.get_sales_data_from_db()
@@ -362,21 +362,21 @@ class Customers(UserControl):
                                         icon=icons.EDIT_OUTLINED,
                                         icon_color="blue",
                                         data=data[2],
-                                        tooltip="Editar cliente",
+                                        tooltip="Edit customer",
                                         on_click=self.edit_clicked,
                                     ),
                                     IconButton(
                                         icon=icons.DELETE_OUTLINED,
                                         icon_color="red",
                                         data=data[2],
-                                        tooltip="Excluir cliente",
+                                        tooltip="Delete customer",
                                         on_click=self.delete_clicked,
                                     ),
                                     IconButton(
                                         icon=icons.ADD_SHOPPING_CART_OUTLINED,
                                         icon_color="green",
                                         data=data[2],
-                                        tooltip="Nova venda",
+                                        tooltip="New sale",
                                         on_click=self.new_sale_clicked,
                                     ),
                                 ]
@@ -419,17 +419,17 @@ class Customers(UserControl):
 
         if result == "success":
             Notification(
-                self.page, f'Arquivo "{filename}" gerado com sucesso!', "green"
+                self.page, f'File "{filename}" generated successfully!', "green"
             ).show_message()
         else:
             Notification(
-                self.page, f'Erro ao gerar o arquivo {filename}: "{error}"', "red"
+                self.page, f'Error generating file {filename}: "{error}"', "red"
             ).show_message()
 
     def pdf_clicked(self, e):
         self.route.save_file_dialog.on_result = self.create_report_customer
         self.route.save_file_dialog.save_file(
-            dialog_title="Salvar como ...", allowed_extensions=["pdf"]
+            dialog_title="Save as ...", allowed_extensions=["pdf"]
         )
         self.update()
 
@@ -442,7 +442,7 @@ class Customers(UserControl):
         del data[-3:]
 
         self.route.page.go("/register_sales")
-        self.route.bar.set_title("Nova Venda")
+        self.route.bar.set_title("New Sale")
         self.route.menu.nnrail.selected_index = 4
         self.route.menu.update()
         self.route.page.update()
@@ -480,7 +480,7 @@ class Customers(UserControl):
                                 icon=icons.VISIBILITY_OUTLINED,
                                 icon_color="blue",
                                 data=data[0],
-                                tooltip="Visualizar pedido",
+                                tooltip="See sale",
                                 on_click=self.see_sale_clicked,
                             )
                         ),
@@ -491,7 +491,7 @@ class Customers(UserControl):
 
     def see_sale_clicked(self, e):
         self.route.page.go("/sales")
-        self.route.bar.set_title("Vendas")
+        self.route.bar.set_title("Sales")
         self.route.menu.nnrail.selected_index = 4
         self.route.menu.update()
         self.route.page.update()
@@ -540,7 +540,7 @@ class Customers(UserControl):
         for i, data in enumerate(adresses):
             self.side_card_column.controls.append(
                 Text(
-                    value=f"Ender. {i+1}: {data[0]}, {data[1]}/{data[2]}, CEP {data[3]}"
+                    value=f"Address {i+1}: {data[0]}, {data[1]}/{data[2]}, CEP {data[3]}"
                 ),
             )
         self.side_card_column.update()
